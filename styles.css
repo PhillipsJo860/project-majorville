@@ -1,0 +1,284 @@
+/* Joshua Phillips */
+/* Date */
+/* Project */
+
+* {
+    margin: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-mode: rgb(182, 198, 184);
+    --white-text: rgb(244, 244, 244);
+    --yellow-highlight: yellow;
+    --red-outline: rgb(223, 15, 15);
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --orange: #ff8c3f;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+
+    font-size: 16px;
+}
+
+
+
+body {
+    background-color: var(--dark-mode);
+    color: var(--white-text);
+    font-family: 'Merriweather', serif;
+    /* font-size: 20px; */
+    margin: 0 auto;
+    
+}
+ 
+h1, h2, h3, main, footer, p {
+    text-shadow: 1.5px 1.5px #050505;
+    
+}
+
+main, footer, p {
+    font-size: 1.2rem;
+}
+
+
+.container {
+    display: grid;
+    max-width: fit-content;
+    width: 100vw;
+   
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "left"
+    "right"
+    "main"
+    "footer";
+    margin: 2.5rem;
+} 
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.left {
+    grid-area: left;
+    background-color: #ffb051;
+    padding: 0.5rem;
+    border: 2px solid #000;
+}
+
+#list {
+    font-size: larger;
+}
+
+
+.right {
+    grid-area: right;
+    background-color: #add8e6;
+    padding: 0.5rem;
+    border: 2px solid #000;
+}
+
+/* .lefta {
+    background-color: ;
+} */
+
+/* .topnav {
+    overflow: hidden;
+    background-color: #3a4a2e;
+    position: relative;
+    grid-area: topnav;
+} */
+
+header {
+    grid-area: header;
+    background-image: url(forest.png);
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 0.5em;
+    border: 2px solid #000;
+    color: var(--white-text);
+    background-color:#3a4a2e;
+    text-align: center;
+}
+
+header h1 {
+    padding: 3rem;
+}
+
+header .icon {
+    /* background: #3a4a2e; */
+    display: block;
+    position: absolute;
+    width: 60px;
+    
+    /* left: 0;
+    top: 0; */
+}
+
+.nav {
+    grid-area: nav;
+    background-color: var(--primary);
+    border: 2px solid #000;
+}
+
+.nav ul{
+    grid-template-columns: 1fr;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav a {
+    background-color: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.nav a:hover {
+    background-color: var(--dark);
+    color: var(--light);
+    /* transform: scale(1.1); */
+}
+
+main {
+    grid-area: main;
+    background-color: #80be50;
+    padding: 0.5rem;
+    border: 2px solid #000;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #4ac58c;
+    padding: 0.5rem;
+    border-top-left-radius: 2px solid #000;
+}
+
+
+
+@media (width > 900px) { 
+
+    :root {
+        font-size: 18px;
+    }
+
+    body {
+        margin: 2% 5%;
+    }
+    .container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.6rem;
+        grid-template-areas: 
+        "header header header header header"
+        "nav nav nav nav nav"
+        "left main main main right"
+        "left main main main right"
+        "footer footer footer footer footer";
+        max-width: fit-content;
+        
+    }
+
+    main p li{
+        font-size: 1.5rem;
+    }
+
+    /* main p {
+        grid-column: 2 / -2;
+    } */
+
+    header .icon {
+        /* background: #3a4a2e; */
+        display: block;
+        position: absolute;
+        width: 90px;
+        
+        /* left: 0;
+        top: 0; */
+    }
+
+    .nav ul{
+        display: grid;
+        gap: 5px;
+        padding: 0.5rem;
+        list-style-type: none;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .nav a {
+        padding: 1rem;
+    }
+
+    .nav a:hover {
+        background-color: var(--orange);
+        color: var(--dark);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        /* Added the CSS below WED */
+        object-fit: cover;
+    }
+
+    header h1 {
+        font-size: xxx-large;
+    }
+}
+
+/* .nav {
+    grid-area: nav;
+    background-color: rgb(26, 64, 23);
+    color: var(--white-text);
+    text-decoration: none;
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+} */
+
+/* .nav a {
+    padding: ;
+} */
+
+/* .topnav #myLinks {
+    display: grid; 
+    background-color: rgb(26, 64, 23);
+    grid-template-columns: 1fr 1fr; 
+    text-align: center;
+} */
+
+/* .topnav a {
+    color: var(--white-text);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+*/
+
+
+/* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    
+}  */
+
+/* .active {
+    background-color: #04AA6D;
+    color: white;
+}*/
